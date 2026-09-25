@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 350" role="img" aria-labelledby="title desc">
+  <title id="title">Beneath the Benchmark research record</title>
+  <desc id="desc">A restrained dark-blue banner showing the research path from data to defensible evidence.</desc>
+  <defs>
+    <linearGradient id="sea" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a1725"/>
+      <stop offset="1" stop-color="#143448"/>
+    </linearGradient>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M44 0H0V44" fill="none" stroke="#85b3bc" stroke-width="0.7" opacity=".11"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="350" rx="22" fill="#0a1725"/>
+  <rect width="1200" height="350" rx="22" fill="url(#grid)"/>
+  <path d="M0 260 C190 214 328 307 518 260 S900 200 1200 268" fill="none" stroke="#4bb3c3" stroke-width="1.5" opacity=".20"/>
+  <path d="M0 284 C218 236 343 330 546 277 S931 223 1200 296" fill="none" stroke="#4bb3c3" stroke-width="1.5" opacity=".12"/>
+  <rect x="54" y="48" width="170" height="28" rx="14" fill="#1b5664"/>
+  <text x="70" y="67" fill="#c1ece9" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="1.5">RESEARCH RECORD</text>
+  <text x="52" y="147" fill="#f6fbfc" font-family="Arial, Helvetica, sans-serif" font-size="47" font-weight="700">Beneath the Benchmark</text>
+  <text x="54" y="188" fill="#b6d4da" font-family="Arial, Helvetica, sans-serif" font-size="21">Underwater vision: from data lineage to edge inference</text>
+  <text x="55" y="324" fill="#8eb8c1" font-family="Arial, Helvetica, sans-serif" font-size="14" letter-spacing="1">LABUST COLLABORATION  /  JUL–SEP 2026</text>
+  <path d="M789 84 H1135 V271 H789 Z" fill="#112b3b" stroke="#477586" stroke-width="1.2"/>
+  <circle cx="833" cy="128" r="14" fill="#54bec2"/>
+  <circle cx="833" cy="179" r="14" fill="#54bec2"/>
+  <circle cx="833" cy="230" r="14" fill="#e4b56b"/>
+  <path d="M833 142V165 M833 193V216" stroke="#79aab2" stroke-width="2"/>
+  <text x="860" y="134" fill="#f5fafb" font-family="Arial, Helvetica, sans-serif" font-size="17">Audit the data</text>
+  <text x="860" y="185" fill="#f5fafb" font-family="Arial, Helvetica, sans-serif" font-size="17">Test the method</text>
+  <text x="860" y="236" fill="#f5fafb" font-family="Arial, Helvetica, sans-serif" font-size="17">Qualify the claim</text>
+</svg>

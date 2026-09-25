@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An independent research record of underwater object-detection evaluation, data integrity, and edge inference.">
+  <title>Beneath the Benchmark — underwater vision research</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="masthead">
+    <div class="shell nav">
+      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span> UNDERWATER / RESEARCH</a>
+      <nav aria-label="Primary">
+        <a href="#story">Story</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#reproduce">Reproduce</a>
+        <a href="#credits">Credits</a>
+      </nav>
+    </div>
+    <div class="shell hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow">LABUST collaboration · FER, University of Zagreb · July–September 2026</p>
+        <h1>Better detection starts with <em>better evidence.</em></h1>
+        <p class="lead">A remote underwater-vision collaboration became an investigation of data lineage, evaluation leakage, and what a model result can honestly mean.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#story">Explore the research <span aria-hidden="true">↗</span></a>
+          <a class="button secondary" href="https://github.com/hamzamaverick51/Beneath-The-Benchmark/blob/main/docs/EVIDENCE.md">Read the evidence notes</a>
+        </div>
+      </div>
+      <div class="hero-panel" aria-label="Project outcome">
+        <span class="panel-kicker">RESEARCH OUTPUT</span>
+        <p>A defensible foundation.</p>
+        <p class="panel-detail">Data-lineage audit, video-separated evaluation, a software edge-inference prototype, and a reviewable handoff. Physical ROV deployment remained untested.</p>
+        <div class="panel-rule"></div>
+        <span class="panel-foot">LABUST collaboration · FER, University of Zagreb</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="shell section intro" id="story">
+      <div class="section-heading">
+        <p class="eyebrow dark">01 / THE RESEARCH TURN</p>
+        <h2>The benchmark was the first problem to solve.</h2>
+      </div>
+      <div class="intro-grid">
+        <div>
+          <p>The work began with model transfer to outdoor underwater imagery. Before claiming improvement, we traced image exports to their source videos. That check changed the interpretation of the original evaluation: files from the same recordings appeared in both training and evaluation.</p>
+          <p>We then created video-separated development splits and ran bounded experiments. Later visual inspection exposed a second limit—image orientation and annotations were not yet reliable enough for a final model-quality claim. The right endpoint was therefore a review workflow, not another headline score.</p>
+          <a class="text-link" href="https://github.com/hamzamaverick51/Beneath-The-Benchmark/blob/main/docs/RESEARCH_STORY.md">Read the full project sequence <span aria-hidden="true">→</span></a>
+        </div>
+        <figure class="figure">
+          <img src="assets/data-lineage.svg" alt="2,646 exported images versus 1,206 distinct frames; all 17 source videos crossed the original split">
+          <figcaption>Structural counts from the supplied outdoor export. File counts are not independent samples.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="shell section">
+        <div class="section-heading">
+          <p class="eyebrow dark">02 / THE WORKFLOW</p>
+          <h2>Five stages. Different levels of evidence.</h2>
+          <p>Each step answers a narrower question than the one after it. A clean split cannot certify labels; a running binary cannot certify field performance.</p>
+        </div>
+        <img class="path-figure" src="assets/research-path.svg" alt="Data lineage verified; video separation structurally verified; model scores on hold; edge inference tested in software; review package delivered with human review pending">
+      </div>
+    </section>
+
+    <section class="shell section" id="evidence">
+      <div class="section-heading">
+        <p class="eyebrow dark">03 / THE EVIDENCE</p>
+        <h2>What held up—and what did not.</h2>
+      </div>
+      <div class="cards">
+        <article class="card"><span class="card-tag verified">Verified structure</span><h3>Video provenance</h3><p>2,646 exports traced to 1,206 distinct frames from 17 videos. All 17 videos crossed the supplied split.</p></article>
+        <article class="card"><span class="card-tag verified">Software evidence</span><h3>Edge inference</h3><p>NCNN/C++ inference, ARM builds, desktop stability and emulated-ARM checks. No physical-board or ROV benchmark.</p></article>
+        <article class="card"><span class="card-tag pending">Review pending</span><h3>Human adjudication</h3><p>The final package queued 704 <strong>candidate</strong> issues across 636 frames. It did not approve corrections.</p></article>
+      </div>
+      <div class="callout"><strong>Accuracy is on hold.</strong> Detector experiments were completed, but the target labels and orientation were not certified. Historical scores are diagnostic records, not a final improvement claim. <a href="https://github.com/hamzamaverick51/Beneath-The-Benchmark/blob/main/docs/EVIDENCE.md">Read the claim boundaries →</a></div>
+    </section>
+
+    <section class="band" id="reproduce">
+      <div class="shell section reproduce">
+        <div>
+          <p class="eyebrow dark">04 / REPRODUCE A PIECE</p>
+          <h2>Run the lineage check yourself.</h2>
+          <p>The public tool needs only the export filenames from the <a href="https://github.com/labust/PPE_underwater_dataset">publisher's dataset</a>. It does not read image bytes, upload media, or alter source files.</p>
+          <a class="text-link" href="https://github.com/hamzamaverick51/Beneath-The-Benchmark/blob/main/docs/REPRODUCE.md">Reproduction guide <span aria-hidden="true">→</span></a>
+        </div>
+        <pre aria-label="Audit command"><code>python3 tools/audit_export.py /path/to/extracted
+python3 -m unittest discover -s tests -v</code></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer id="credits">
+    <div class="shell footer-grid">
+      <div><p class="eyebrow">INDEPENDENT CASE STUDY</p><h2>Research is also knowing when to stop a claim.</h2></div>
+      <div><p>Maintained by Hamza Raheel. Conducted remotely with LABUST at FER, University of Zagreb, with guidance from Fausto Ferreira and Waseem Akram and technical feedback from Matej Fabijanić.</p><p>This site is not an official LABUST release or endorsement. It contains no personal correspondence, meeting material, unpublished manuscript, source footage or model weights.</p><a href="https://github.com/hamzamaverick51/Beneath-The-Benchmark/blob/main/docs/CREDITS.md">Credits and provenance →</a></div>
+    </div>
+  </footer>
+</body>
+</html>

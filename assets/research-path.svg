@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 296" role="img" aria-labelledby="title desc">
+  <title id="title">Research path and evidence status</title>
+  <desc id="desc">Five stages: dataset audit verified, video split structurally verified, model studies on hold, edge software verified only in software, review package delivered with candidates awaiting adjudication.</desc>
+  <rect width="1200" height="296" rx="18" fill="#f4f8f9"/>
+  <path d="M128 114H1073" stroke="#b9cdd2" stroke-width="3"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <g transform="translate(26 50)">
+      <rect width="213" height="183" rx="13" fill="#ffffff" stroke="#d4e2e5"/>
+      <circle cx="32" cy="64" r="18" fill="#d9f1ef"/><text x="26" y="70" font-size="17" font-weight="700" fill="#176e73">1</text>
+      <text x="19" y="107" font-size="17" font-weight="700" fill="#18313c">Data lineage</text>
+      <text x="19" y="136" font-size="13" fill="#4d6b76">2,646 exports</text>
+      <text x="19" y="156" font-size="13" fill="#4d6b76">1,206 source frames</text>
+      <text x="19" y="170" font-size="12" font-weight="700" fill="#167d79">STRUCTURAL FACT</text>
+    </g>
+    <g transform="translate(260 50)">
+      <rect width="213" height="183" rx="13" fill="#ffffff" stroke="#d4e2e5"/>
+      <circle cx="32" cy="64" r="18" fill="#d9f1ef"/><text x="26" y="70" font-size="17" font-weight="700" fill="#176e73">2</text>
+      <text x="19" y="107" font-size="17" font-weight="700" fill="#18313c">Video separation</text>
+      <text x="19" y="136" font-size="13" fill="#4d6b76">No source video crosses</text>
+      <text x="19" y="156" font-size="13" fill="#4d6b76">the provisional splits</text>
+      <text x="19" y="170" font-size="12" font-weight="700" fill="#167d79">STRUCTURAL FIX</text>
+    </g>
+    <g transform="translate(494 50)">
+      <rect width="213" height="183" rx="13" fill="#ffffff" stroke="#d4e2e5"/>
+      <circle cx="32" cy="64" r="18" fill="#fcebd2"/><text x="26" y="70" font-size="17" font-weight="700" fill="#98601f">3</text>
+      <text x="19" y="107" font-size="17" font-weight="700" fill="#18313c">Model studies</text>
+      <text x="19" y="136" font-size="13" fill="#4d6b76">Controlled experiments;</text>
+      <text x="19" y="156" font-size="13" fill="#4d6b76">accuracy not certified</text>
+      <text x="19" y="170" font-size="12" font-weight="700" fill="#ad6e1e">DATA HOLD</text>
+    </g>
+    <g transform="translate(728 50)">
+      <rect width="213" height="183" rx="13" fill="#ffffff" stroke="#d4e2e5"/>
+      <circle cx="32" cy="64" r="18" fill="#d9f1ef"/><text x="26" y="70" font-size="17" font-weight="700" fill="#176e73">4</text>
+      <text x="19" y="107" font-size="17" font-weight="700" fill="#18313c">Edge inference</text>
+      <text x="19" y="136" font-size="13" fill="#4d6b76">Desktop and QEMU;</text>
+      <text x="19" y="156" font-size="13" fill="#4d6b76">no physical board test</text>
+      <text x="19" y="170" font-size="12" font-weight="700" fill="#167d79">SOFTWARE ONLY</text>
+    </g>
+    <g transform="translate(962 50)">
+      <rect width="213" height="183" rx="13" fill="#ffffff" stroke="#d4e2e5"/>
+      <circle cx="32" cy="64" r="18" fill="#fcebd2"/><text x="26" y="70" font-size="17" font-weight="700" fill="#98601f">5</text>
+      <text x="19" y="107" font-size="17" font-weight="700" fill="#18313c">Review package</text>
+      <text x="19" y="136" font-size="13" fill="#4d6b76">704 candidate issues;</text>
+      <text x="19" y="156" font-size="13" fill="#4d6b76">human review pending</text>
+      <text x="19" y="170" font-size="12" font-weight="700" fill="#ad6e1e">DELIVERED</text>
+    </g>
+  </g>
+</svg>

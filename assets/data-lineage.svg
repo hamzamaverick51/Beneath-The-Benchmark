@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 330" role="img" aria-labelledby="title desc">
+  <title id="title">Why file count was not dataset size</title>
+  <desc id="desc">2,646 exported image files trace to 1,206 distinct source frames in 17 videos. All 17 videos occur on both sides of the original split.</desc>
+  <rect width="1000" height="330" rx="18" fill="#f4f8f9"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="42" y="55" fill="#16313d" font-size="25" font-weight="700">Why the original split needed an audit</text>
+    <text x="42" y="89" fill="#58737c" font-size="14">File count was not independent sample count.</text>
+    <text x="43" y="147" fill="#16313d" font-size="17" font-weight="700">Exported images</text>
+    <rect x="250" y="126" width="591" height="28" rx="6" fill="#2c8590"/>
+    <text x="858" y="148" fill="#16313d" font-size="20" font-weight="700">2,646</text>
+    <text x="43" y="206" fill="#16313d" font-size="17" font-weight="700">Distinct frames</text>
+    <rect x="250" y="185" width="269" height="28" rx="6" fill="#86c8c4"/>
+    <text x="536" y="207" fill="#16313d" font-size="20" font-weight="700">1,206</text>
+    <path d="M42 245H958" stroke="#d3e2e5"/>
+    <circle cx="55" cy="282" r="11" fill="#db9e55"/>
+    <text x="78" y="288" fill="#425d67" font-size="17">17 of 17 source videos crossed the supplied split</text>
+  </g>
+</svg>
