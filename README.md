@@ -8,7 +8,7 @@ An independent research record by **Hamza Raheel**, developed during an approxim
 
 The starting question was practical: how can an underwater object detector transfer from controlled imagery to open water? The most important answer was methodological. Before measuring that transfer, we had to establish what the delivered images, splits and annotations actually represented.
 
-[Project atlas](docs/PROJECT_ATLAS.md) · [Evidence ledger](docs/EVIDENCE.md) · [Reproduce the audit](docs/REPRODUCE.md)
+[Explore the visual case study](https://hamzamaverick51.github.io/Beneath-The-Benchmark/) · [Project atlas](docs/PROJECT_ATLAS.md) · [Evidence ledger](docs/EVIDENCE.md) · [Reproduce the audit](docs/REPRODUCE.md)
 
 ---
 
