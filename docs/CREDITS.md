@@ -13,4 +13,6 @@ Roles above describe the collaboration. Listing a person does not imply that the
 
 The underwater imagery and annotations originated with the [LABUST dataset publisher](https://github.com/labust/PPE_underwater_dataset). The publisher's repository contains an Apache-2.0 license file; users should consult that repository for the precise terms applying to the version they download. This case study links to the source instead of republishing imagery, annotations, or derived media.
 
+The reconstructed source-domain baseline drew on the public [TrashCan dataset](https://irvlab.cs.umn.edu/resources/trashcan) and the [SeaClear Marine Debris dataset](https://doi.org/10.4121/4f1dff25-e157-4399-a5d4-478055461689.v1). Their maintainers retain credit and control over their respective releases. Matching the reported source-image counts was not proof of identical class mappings or image membership.
+
 The original research manuscript shared during the collaboration is not included here. No unpublished document, meeting material, private communication, signature, university logo, or personal contact information is included.
