@@ -4,75 +4,82 @@
 
 ### Underwater vision, with the evidence left visible.
 
-This is **Hamza Raheel's independent research record** of an approximately eight-week remote collaboration with the [Laboratory for Underwater Systems and Technologies (LABUST)](https://labust.fer.hr/) at FER, University of Zagreb, from July to September 2026. The work began with a practical objective: improve how an underwater object detector transfers from controlled imagery to a new open-water site. It ended with a more consequential finding: model progress could not be judged responsibly until the delivered data and annotations were made trustworthy.
+An independent research record by **Hamza Raheel**, developed during an approximately eight-week remote collaboration with the [Laboratory for Underwater Systems and Technologies (LABUST)](https://labust.fer.hr/) at FER, University of Zagreb, from July to September 2026.
 
-**The outcome was a research system, not a single headline score:** source-data reconstruction, a video-lineage audit, video-separated evaluation, bounded detector studies, an edge-inference software prototype, and an offline human-review handoff. The collaboration concluded before a corrected dataset or physical ROV benchmark could be completed.
+The starting question was practical: how can an underwater object detector transfer from controlled imagery to open water? The most important answer was methodological. Before measuring that transfer, we had to establish what the delivered images, splits and annotations actually represented.
 
-[Full work map](docs/PROJECT_ATLAS.md) · [Evidence and limitations](docs/EVIDENCE.md) · [Website source](index.html) (GitHub Pages setup pending)
+[Project atlas](docs/PROJECT_ATLAS.md) · [Evidence ledger](docs/EVIDENCE.md) · [Reproduce the audit](docs/REPRODUCE.md)
 
-## The project at a glance
+---
 
-| Evidence from the work | What it means |
-| --- | --- |
-| **2,646 exported outdoor images → 1,206 distinct source frames** | File count was not independent sample count. |
-| **17 of 17 source videos crossed the delivered train/validation split** | The supplied export could not measure transfer to unseen recordings as-is. This finding does not establish leakage in an unpublished paper split. |
-| **31 retained result records** | Model ideas, controls, failed branches and ambiguous results were documented; their target-domain accuracy conclusions are historical diagnostics after the data-validity hold. |
-| **1,000-frame desktop inference burn-in** | The edge-inference *software* path was exercised. No physical Raspberry Pi, ROV or field performance was measured. |
-| **704 candidate issues across 636 frames** | A full-corpus review package was delivered. Candidate flags are not accepted annotation corrections. |
+## The finding that changed the work
 
-![Five stages of the work and their evidence status](assets/research-path.svg)
+**2,646 outdoor exports represented 1,206 distinct source frames.** All **17 source videos** appeared on both sides of the delivered train/validation split. File count was not independent sample count, and the supplied export could not by itself demonstrate transfer to unseen recordings. This finding concerns that export, **not** any unpublished paper split.
 
-## What was built
+We traced exports to source frames and built video-separated partitions. Later orientation and box-annotation concerns meant that even the revised target-domain comparisons could not be certified as accuracy results. The work became a case study in what a benchmark can—and cannot—support.
 
-**01 · Reconstruct and audit.** Recreated the public-source preparation path and reconciled dataset counts, while distinguishing reconstruction from exact reproduction. Then traced the delivered outdoor export back to video/frame identities. The [public audit tool](tools/audit_export.py) reproduces the structural counts without opening image pixels.
+The record also includes **31 retained result records**, a **1,000-frame desktop inference burn-in**, and an offline review package flagging **704 candidate issues across 636 frames**. These document work completed, not a certified model gain or accepted label corrections.
 
-**02 · Make evaluation structurally honest.** Removed export-level duplication and assigned whole videos to separate development and held-out partitions. The provisional split was video-disjoint; its image orientation and boxes were **not** certified.
+---
 
-**03 · Investigate model behaviour.** Used frozen protocols to study annotation budgets, sample selection, run-to-run variation, source retention, unlabelled views, checkpoint composition, resolution and small objects. The [experiment map](docs/EXPERIMENT_MAP.md) groups the retained records by question, not by claimed win.
+## Five connected workstreams
 
-**04 · Prototype edge inference.** Built NCNN reference and Python-free C++ inference paths, ARM executables and integrity checks. Desktop stability and emulated-ARM execution were demonstrated. The native path did not reach exact per-detection output parity; no physical-board benchmark was run.
+### 01 / Reconstruct the data
 
-**05 · Hand off reviewable uncertainty.** After orientation and annotation concerns surfaced, assembled an offline package covering all 1,206 distinct frames, a 704-record candidate ledger and a two-reviewer/adjudicator workflow. The package enabled human decisions; it did not make them or produce a corrected ground truth.
+Recreated the public-source preparation path, reconciled counts, and traced the delivered export back to video and frame identities. The [public audit tool](tools/audit_export.py) reproduces structural findings from filenames without opening image pixels.
 
-The [project atlas](docs/PROJECT_ATLAS.md) gives the chronology, deliverables and precise boundaries behind each stage.
+### 02 / Repair the evaluation structure
 
-## Why the model scores are not the headline
+Removed export-level duplication and assigned whole videos to separate development and held-out partitions. The provisional split was video-disjoint; image orientation and boxes were **not** certified.
 
-Separating videos fixes a structural leakage route. It does not repair a mirrored image, a missing object label or an imprecise box. Because those questions were unresolved at handoff, the target-domain accuracy and model-selection results remain **on hold**. Presenting a multiplier or “best model” from that benchmark as a certified outcome would misrepresent what the experiment measured.
+### 03 / Study model behaviour
 
-This repository therefore distinguishes:
+Under fixed protocols, investigated annotation budgets, sample selection, run variation, source retention, unlabelled views, checkpoint composition, resolution and small objects. The [experiment map](docs/EXPERIMENT_MAP.md) groups historical results by research question rather than advertising a “best model.”
 
-- **Established:** filename lineage, split overlap, software checks and the delivered review queue.
-- **Provisional:** target-domain detector comparisons on uncertified images/labels.
-- **Not tested:** final corrected-dataset accuracy, sustained physical-board runtime and ROV/open-water performance.
+### 04 / Build an edge-inference software path
 
-See the [claim-by-claim evidence ledger](docs/EVIDENCE.md).
+Developed NCNN reference and Python-free C++ inference paths, ARM executables and integrity checks. Desktop stability and emulated-ARM execution were exercised. Exact per-detection parity was not reached, and no physical Raspberry Pi, ROV or field benchmark was run.
 
-## Reproduce a public finding
+### 05 / Hand off reviewable uncertainty
 
-The included tool reads filenames from a locally extracted copy of the [publisher's dataset](https://github.com/labust/PPE_underwater_dataset). It does not read image contents, upload files or modify the dataset.
+Assembled an offline, full-corpus review package for **1,206 distinct frames**, with a **704-record candidate ledger** and a two-reviewer/adjudicator workflow. It enabled human decisions; it did not produce corrected ground truth.
+
+[Read the detailed project atlas →](docs/PROJECT_ATLAS.md)
+
+---
+
+## What the evidence supports
+
+**Established:** filename lineage, overlap in the delivered split, software checks, and delivery of the review queue.
+
+**Provisional:** target-domain detector comparisons on images and labels that had not completed review.
+
+**Not tested:** corrected-dataset accuracy, sustained physical-board runtime, and ROV/open-water performance.
+
+A video-disjoint split fixes one structural leakage route. It cannot repair a mirrored image, missing object or imprecise box. That is why this repository does **not** present a model-performance multiplier as its headline. The [evidence ledger](docs/EVIDENCE.md) distinguishes each claim and limit.
+
+## Reproduce one public finding
+
+The tool reads filenames from a locally extracted copy of the [publisher's dataset](https://github.com/labust/PPE_underwater_dataset). It does not read image contents, upload files or modify the dataset.
 
 ~~~bash
 python3 tools/audit_export.py /path/to/extracted-dataset
 python3 -m unittest discover -s tests -v
 ~~~
 
-For the export audited here, expect 2,646 outdoor exports, 1,206 distinct source frames and 17 source videos spanning the supplied splits. Other versions may differ; see the [reproduction guide](docs/REPRODUCE.md). The tool cannot assess pixels, labels, model accuracy or deployment speed.
+For the export audited here, expect 2,646 outdoor exports, 1,206 distinct source frames and 17 source videos spanning the supplied splits. Other dataset versions may differ. See the [reproduction guide](docs/REPRODUCE.md) for interpretation and limitations.
 
-## Navigate the record
+## Explore the record
 
-| Document | What it contains |
-| --- | --- |
-| [Visual case study](index.html) | A designed, accessible project narrative; publish the root directory with GitHub Pages to view it as a website. |
-| [Project atlas](docs/PROJECT_ATLAS.md) | Detailed sequence, workstreams, outputs and evidence limits. |
-| [Research story](docs/RESEARCH_STORY.md) | Short chronology and methodological turn. |
-| [Experiment map](docs/EXPERIMENT_MAP.md) | Six questions across 31 historical result records. |
-| [Evidence and limitations](docs/EVIDENCE.md) | A claim ledger: what was checked, what is provisional and what was never tested. |
-| [Reproduction guide](docs/REPRODUCE.md) | Instructions and interpretation for the public filename audit. |
-| [Credits and provenance](docs/CREDITS.md) | People, institutional context and source-data attribution. |
+- [Project atlas](docs/PROJECT_ATLAS.md) — chronology, workstreams and deliverables.
+- [Research story](docs/RESEARCH_STORY.md) — the methodological turn in brief.
+- [Experiment map](docs/EXPERIMENT_MAP.md) — six questions behind 31 historical records.
+- [Evidence ledger](docs/EVIDENCE.md) — checked facts, provisional results and untested claims.
+- [Reproduction guide](docs/REPRODUCE.md) — repeat the public filename audit.
+- [Credits and provenance](docs/CREDITS.md) — collaborators, institution and source-data attribution.
 
-## Attribution and release boundary
+---
 
-This account names the people and institution involved, but is **not an official LABUST publication or endorsement**. It contains no meeting recordings, correspondence, unpublished manuscript, original LABUST footage or labels, model weights, private experiment outputs, review-package media, deployment binaries or personal contact details. Original figures and the small public audit tool were prepared for this showcase. Source media remain with the [dataset publisher](https://github.com/labust/PPE_underwater_dataset).
+This account names the people and institution involved, but is **not an official LABUST publication or endorsement**. It contains no private correspondence, meeting content, unpublished manuscript, original LABUST imagery or labels, weights, binaries or personal contact details. Source media remain with the [dataset publisher](https://github.com/labust/PPE_underwater_dataset).
 
-**Status:** collaboration concluded September 2026 · **Dataset:** annotation/orientation review unresolved · **Deployment:** software prototype, not field tested.
+**Status:** collaboration concluded September 2026 · **Dataset:** orientation/annotation review unresolved · **Deployment:** software prototype, not field tested.
